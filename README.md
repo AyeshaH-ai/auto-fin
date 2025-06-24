@@ -10,7 +10,8 @@
 🔗 **Live App:**[auto-fin.streamlit.app](https://auto-fin.streamlit.app)
 
 
-
+Created by Ayesha Hussain. Plz follow on linkedin [LinkedIn – Ayesha H.](https://www.linkedin.com/in/ayesha-h-691b72365)
+Ayesha H. (My LinkedIn profile name)
 
 
 Add README file
