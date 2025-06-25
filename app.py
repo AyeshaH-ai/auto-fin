@@ -44,3 +44,9 @@ if uploaded_file:
 
             # Show GPT-style financial suggestions
             st.subheader(" Auto-Fin Suggestions")
+            for tip in generate_suggestions(df):
+                st.info(tip)
+
+    except Exception as e:
+        st.error(f"❌ Error processing file: {e}")
+
