@@ -1,24 +1,23 @@
 import pandas as pd
 
 def process_data(df):
-    # Group by Category and Sub-Category
-    summary = df.groupby(['Category', 'Sub-Category'])['Amount'].sum().reset_index()
-    summary.columns = ['Category', 'Sub-Category', 'Total Amount']
-    return summary
+    # Split categories
+    pnl_df = df[df['Category'].isin(['Revenue', 'Expense'])]
+    balance_df = df[df['Category'].isin(['Asset', 'Liability'])]
 
-def generate_suggestions(df):
-    tips = []
+    # Summary calculations
+    total_revenue = pnl_df[pnl_df['Category'] == 'Revenue']['Amount'].sum()
+    total_expense = pnl_df[pnl_df['Category'] == 'Expense']['Amount'].sum()
+    net_profit = total_revenue - total_expense
 
-    if df['Amount'].sum() > 100000:
-        tips.append("💰 High total activity – monitor large expense and revenue flows.")
-    
-    if (df['Amount'] < 0).any():
-        tips.append("⚠️ Negative values found – may indicate loans, overdrafts, or returns.")
+    total_assets = balance_df[balance_df['Category'] == 'Asset']['Amount'].sum()
+    total_liabilities = balance_df[balance_df['Category'] == 'Liability']['Amount'].sum()
+    net_assets = total_assets + total_liabilities  # Liabilities already negative
 
-    if df['Payment Method'].nunique() > 3:
-        tips.append("📌 Multiple payment methods in use – consider consolidating for better tracking.")
+    summary_df = pd.DataFrame({
+        "Metric": ["Total Revenue", "Total Expense", "Net Profit", "Total Assets", "Total Liabilities", "Net Assets"],
+        "Amount": [total_revenue, total_expense, net_profit, total_assets, total_liabilities, net_assets]
+    })
 
-    if 'Expense' in df['Category'].values:
-        tips.append("📉 Expenses are recorded – analyze Cost of Goods Sold and overheads separately.")
+    return pnl_df, balance_df, summary_df
 
-    return tips
