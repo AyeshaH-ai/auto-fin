@@ -27,7 +27,7 @@ Add README file
    - Multi-sheet Excel report (P&L, Balance Sheet, Summary, Tips)
    - AI-generated financial insights
    - Revenue/Expense visuals
-   - 
+     
 ## 📂 Report Output
 
 The downloadable Excel report contains:
@@ -35,7 +35,7 @@ The downloadable Excel report contains:
 - **Balance Sheet** – Assets and liabilities sheet
 - **Summary** – Total revenue, expense, profit, net assets
 - **Auto-Fin Tips** – AI-generated suggestions based on your financial health
-- 
+
 ## 📦 Technologies Used
 
 - Python
