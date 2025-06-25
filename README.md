@@ -9,7 +9,7 @@
 
 🔗 **Live App:**[auto-fin.streamlit.app](https://auto-fin.streamlit.app)
 
-
+- ## 🙌 Credits
 Created by Ayesha Hussain. Plz follow on linkedin [LinkedIn – Ayesha H.](https://www.linkedin.com/in/ayesha-h-691b72365)
 Ayesha H. (My LinkedIn profile name)
 If u want to contact (corevestfinance1@gmail.com) or (https://github.com/AyeshaH-ai)
@@ -52,7 +52,7 @@ The downloadable Excel report contains:
 - Freelancers tracking income and expenses
 - Finance students practicing automation
 - Non-accountants who want instant financial clarity
-- ## 🙌 Credits
+
 
 ## 🪪 License
 
